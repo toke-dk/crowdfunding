@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SupportSection extends StatelessWidget {
@@ -22,14 +23,14 @@ class SupportSection extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "Støt Turen! 200",
+            "Støt Turen!",
             style: Theme.of(context)
                 .textTheme
                 .displayMedium!
                 .copyWith(fontWeight: FontWeight.w900, fontSize: 30),
           ),
           const SizedBox(
-            height: 10,
+            height: 40,
           ),
           GridView.count(
             crossAxisSpacing: 10,
@@ -41,9 +42,24 @@ class SupportSection extends StatelessWidget {
                 4,
                 (index) => OutlinedButton(
                       onPressed: () {},
-                      child: Center(child: Text("${index == 0 ? 10 : index == 1 ? 50 : index == 2 ? 100 : 1000} kr")),
+                      child: Center(
+                          child: Text(
+                              "${index == 0 ? 10 : index == 1 ? 50 : index == 2 ? 100 : 1000} kr")),
                     )),
-          )
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          AspectRatio(
+              aspectRatio: 6,
+              child: OutlinedButton(
+                  onPressed: () {},
+                  child: const TextField(
+                    decoration: InputDecoration(
+                      hintText: "Andet beløb",
+                      border: InputBorder.none,
+                    ),
+                  )))
         ],
       ),
     );
