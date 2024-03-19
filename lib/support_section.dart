@@ -41,7 +41,7 @@ class SupportSection extends StatelessWidget {
                 4,
                 (index) => OutlinedButton(
                       onPressed: () {},
-                      child: Center(child: Text("${pow(10, index)} kr")),
+                      child: Center(child: Text("${index == 0 ? 10 : index == 1 ? 50 : index == 2 ? 100 : 1000} kr")),
                     )),
           )
         ],
