@@ -1,4 +1,5 @@
 import 'package:crowdfunding/header.dart';
+import 'package:crowdfunding/leaderboard_section.dart';
 import 'package:crowdfunding/support_section.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -47,6 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Header(),
             SizedBox(height: 50,),
             SupportSection(),
+            SizedBox(height: 50,),
+            LeaderboardSection(),
           ],
         ),
       ),
