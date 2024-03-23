@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-          children: [
+          children: const [
             Column(
               children: [
                 Header(),
