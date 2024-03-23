@@ -54,7 +54,14 @@ class _MyHomePageState extends State<MyHomePage> {
         width: 500,
         child: ListView(
           children: [
-            DrawerHeader(child: Text("Indsamlingskampagne for farum badminton".toUpperCase(), style: Theme.of(context).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),)),
+            DrawerHeader(
+                child: Text(
+              "Indsamlingskampagne for farum badminton".toUpperCase(),
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(fontWeight: FontWeight.bold),
+            )),
             ListTile(
               title: Text("Hjem".toUpperCase()),
             ),

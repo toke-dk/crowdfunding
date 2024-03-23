@@ -30,9 +30,9 @@ class LeaderboardSection extends StatelessWidget {
               color: Colors.white,
             ),
             children: {
-              1: Text("Seneste donationer"),
-              2: Text("Flest donationer"),
-              3: Text("Bedste hold")
+              1: const Text("Seneste donationer"),
+              2: const Text("Flest donationer"),
+              3: const Text("Bedste hold")
             },
             onValueChanged: (int newVal) => print(newVal)),
         Column(
