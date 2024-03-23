@@ -1,7 +1,11 @@
 import 'package:crowdfunding/header.dart';
 import 'package:crowdfunding/leaderboard_section.dart';
 import 'package:crowdfunding/support_section.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:footer/footer.dart';
+import 'package:footer/footer_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -41,18 +45,39 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
+    return Scaffold(
+      body: FooterView(
+          footer: Footer(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            child: SizedBox(
+              height: 60,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "FAQ | Kontakt | Pivatlivspolitk ".toUpperCase(),
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.onPrimary),
+                  ),
+                ],
+              ),
+            ),
+          ),
           children: [
-            Header(),
-            SizedBox(height: 50,),
-            SupportSection(),
-            SizedBox(height: 50,),
-            LeaderboardSection(),
-          ],
-        ),
-      ),
+            Column(
+              children: [
+                Header(),
+                SizedBox(
+                  height: 50,
+                ),
+                SupportSection(),
+                SizedBox(
+                  height: 50,
+                ),
+                LeaderboardSection(),
+              ],
+            ),
+          ]),
     );
   }
 }
