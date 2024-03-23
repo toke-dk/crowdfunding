@@ -13,7 +13,6 @@ class SupportSection extends StatefulWidget {
 class _SupportSectionState extends State<SupportSection> {
   bool isPressed = false;
 
-
   bool wantsToReceiveUpdates = false;
   bool keepDonationAnonymous = false;
 
@@ -125,24 +124,35 @@ class _SupportSectionState extends State<SupportSection> {
           maxLines: 3,
         ),
         MyCheckBoxList(
-          title: Text("JA! Jeg vil gerne få opdateringer om rejsen for denne indsamling"),
-            value: wantsToReceiveUpdates, onChanged: (bool? newVal){setState(() {
-          if (newVal == null) return;
-          wantsToReceiveUpdates = newVal;
-        });}),
+            title: Text(
+                "JA! Jeg vil gerne få opdateringer om rejsen for denne indsamling"),
+            value: wantsToReceiveUpdates,
+            onChanged: (bool? newVal) {
+              setState(() {
+                if (newVal == null) return;
+                wantsToReceiveUpdates = newVal;
+              });
+            }),
         MyCheckBoxList(
             title: Text("Gør venligst min støtte anonym"),
-            value: keepDonationAnonymous, onChanged: (bool? newVal){setState(() {
-          if (newVal == null) return;
-          keepDonationAnonymous = newVal;
-        });}),
+            value: keepDonationAnonymous,
+            onChanged: (bool? newVal) {
+              setState(() {
+                if (newVal == null) return;
+                keepDonationAnonymous = newVal;
+              });
+            }),
       ],
     );
   }
 }
 
 class MyCheckBoxList extends StatelessWidget {
-  const MyCheckBoxList({super.key, required this.value, required this.onChanged, required this.title});
+  const MyCheckBoxList(
+      {super.key,
+      required this.value,
+      required this.onChanged,
+      required this.title});
 
   final bool value;
   final Function(bool? newVal) onChanged;
@@ -151,15 +161,20 @@ class MyCheckBoxList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
-      controlAffinity: ListTileControlAffinity.leading,
+        controlAffinity: ListTileControlAffinity.leading,
         title: title,
-        value: value, onChanged: onChanged);
+        value: value,
+        onChanged: onChanged);
   }
 }
 
-
 class MyTextFieldWidget extends StatelessWidget {
-  const MyTextFieldWidget({super.key, required this.hintText, this.helperText, this.maxLines, this.title});
+  const MyTextFieldWidget(
+      {super.key,
+      required this.hintText,
+      this.helperText,
+      this.maxLines,
+      this.title});
 
   final String hintText;
   final String? title;
@@ -175,16 +190,21 @@ class MyTextFieldWidget extends StatelessWidget {
         children: [
           Text(
             title == null ? hintText.toUpperCase() : title!.toUpperCase(),
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.w900),
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(fontWeight: FontWeight.w900),
           ),
-          const SizedBox(height: 4,),
+          const SizedBox(
+            height: 4,
+          ),
           TextField(
-            maxLines: maxLines,
+              maxLines: maxLines,
               decoration: InputDecoration(
-
-                helperText: helperText,
-                filled: true,
-                  hintText: hintText, border: const OutlineInputBorder())),
+                  helperText: helperText,
+                  filled: true,
+                  hintText: hintText,
+                  border: const OutlineInputBorder())),
         ],
       ),
     );
