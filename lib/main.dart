@@ -50,26 +50,45 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      drawer: Drawer(),
-      body: FooterView(
-          footer: Footer(
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            child: SizedBox(
-              height: 60,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    "FAQ | Kontakt | Pivatlivspolitk ".toUpperCase(),
-                    style: TextStyle(
-                        color: Theme.of(context).colorScheme.onPrimary),
-                  ),
-                ],
-              ),
-            ),
-          ),
+      drawer: Drawer(
+        width: 500,
+        child: ListView(
           children: [
-            Stack(
+            DrawerHeader(child: Text("Indsamlingskampagne for farum badminton".toUpperCase(), style: Theme.of(context).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),)),
+            ListTile(
+              title: Text("Hjem".toUpperCase()),
+            ),
+            ListTile(
+              title: Text("Støt".toUpperCase()),
+            ),
+            ListTile(
+              title: Text("Leaderboard".toUpperCase()),
+            ),
+            ListTile(
+              title: Text("Projektet".toUpperCase()),
+            ),
+          ],
+        ),
+      ),
+      body: Stack(
+        children: [
+          FooterView(
+              footer: Footer(
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                child: SizedBox(
+                  height: 60,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "FAQ | Kontakt | Pivatlivspolitk ".toUpperCase(),
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.onPrimary),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               children: [
                 Column(
                   children: [
@@ -84,22 +103,22 @@ class _MyHomePageState extends State<MyHomePage> {
                     LeaderboardSection(),
                   ],
                 ),
-                Positioned(
-                  top: 20,
-                  left: 20,
-                  child: CircleAvatar(
-                    backgroundColor: Theme.of(context).colorScheme.onPrimary,
-                    radius: 30,
-                    child: IconButton(
-                        onPressed: () => _key.currentState!.openDrawer(),
-                        icon: Icon(
-                          Icons.menu,
-                        )),
-                  ),
-                ),
-              ],
+              ]),
+          Positioned(
+            top: 20,
+            left: 20,
+            child: CircleAvatar(
+              backgroundColor: Theme.of(context).colorScheme.onPrimary,
+              radius: 30,
+              child: IconButton(
+                  onPressed: () => _key.currentState!.openDrawer(),
+                  icon: Icon(
+                    Icons.menu,
+                  )),
             ),
-          ]),
+          ),
+        ],
+      ),
     );
   }
 }
