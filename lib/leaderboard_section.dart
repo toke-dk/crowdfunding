@@ -1,3 +1,4 @@
+import 'package:custom_sliding_segmented_control/custom_sliding_segmented_control.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -17,6 +18,23 @@ class LeaderboardSection extends StatelessWidget {
               .displayMedium!
               .copyWith(fontWeight: FontWeight.w900, fontSize: 55),
         ),
+        CustomSlidingSegmentedControl(
+            customSegmentSettings: CustomSegmentSettings(
+                splashColor: Colors.transparent,
+                hoverColor: Colors.transparent),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(40),
+                color: Colors.grey[300]),
+            thumbDecoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(40),
+              color: Colors.white,
+            ),
+            children: {
+              1: Text("Seneste donationer"),
+              2: Text("Flest donationer"),
+              3: Text("Bedste hold")
+            },
+            onValueChanged: (int newVal) => print(newVal)),
         Column(
           mainAxisSize: MainAxisSize.min,
           children: List.generate(4, (index) => _buildSupportBanner(context)),
@@ -32,11 +50,14 @@ class LeaderboardSection extends StatelessWidget {
           padding: const EdgeInsets.only(top: 12, bottom: 12, left: 30),
           child: Container(
             width: 600,
-
-            decoration: BoxDecoration(
-              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.07), spreadRadius: 2, blurRadius: 6)],
-                borderRadius: BorderRadius.circular(5), color: Colors.white),
-            padding: const EdgeInsets.only(top: 10, left: 50, bottom: 10, right: 10),
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.07),
+                  spreadRadius: 2,
+                  blurRadius: 6)
+            ], borderRadius: BorderRadius.circular(5), color: Colors.white),
+            padding:
+                const EdgeInsets.only(top: 10, left: 50, bottom: 10, right: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

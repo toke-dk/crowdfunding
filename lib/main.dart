@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              children: [
+              children: const [
                 Column(
                   children: [
                     Header(),
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
               radius: 30,
               child: IconButton(
                   onPressed: () => _key.currentState!.openDrawer(),
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.menu,
                   )),
             ),

@@ -39,6 +39,7 @@ dependencies:
   flutter_animate: ^4.5.0
   countup: ^0.1.4
   footer: ^0.0.4
+  custom_sliding_segmented_control: ^1.8.1
 
 dev_dependencies:
   flutter_test:
