@@ -4,6 +4,7 @@ import 'package:crowdfunding/support_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,9 +44,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
+      drawer: Drawer(),
       body: FooterView(
           footer: Footer(
             backgroundColor: Theme.of(context).colorScheme.primary,
@@ -63,18 +68,35 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-          children: const [
-            Column(
+          children: [
+            Stack(
               children: [
-                Header(),
-                SizedBox(
-                  height: 50,
+                Column(
+                  children: [
+                    Header(),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    SupportSection(),
+                    SizedBox(
+                      height: 100,
+                    ),
+                    LeaderboardSection(),
+                  ],
                 ),
-                SupportSection(),
-                SizedBox(
-                  height: 50,
+                Positioned(
+                  top: 20,
+                  left: 20,
+                  child: CircleAvatar(
+                    backgroundColor: Theme.of(context).colorScheme.onPrimary,
+                    radius: 30,
+                    child: IconButton(
+                        onPressed: () => _key.currentState!.openDrawer(),
+                        icon: Icon(
+                          Icons.menu,
+                        )),
+                  ),
                 ),
-                LeaderboardSection(),
               ],
             ),
           ]),
