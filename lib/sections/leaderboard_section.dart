@@ -18,26 +18,29 @@ class LeaderboardSection extends StatelessWidget {
               .displayMedium!
               .copyWith(fontWeight: FontWeight.w900, fontSize: 55),
         ),
-        CustomSlidingSegmentedControl(
-            customSegmentSettings: CustomSegmentSettings(
-                splashColor: Colors.transparent,
-                hoverColor: Colors.transparent),
-            decoration: BoxDecoration(
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 30),
+          child: CustomSlidingSegmentedControl(
+              customSegmentSettings: CustomSegmentSettings(
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(40),
+                  color: Colors.grey[300]),
+              thumbDecoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
-                color: Colors.grey[300]),
-            thumbDecoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40),
-              color: Colors.white,
-            ),
-            children: {
-              1: const Text("Seneste donationer"),
-              2: const Text("Flest donationer"),
-              3: const Text("Bedste hold")
-            },
-            onValueChanged: (int newVal) => print(newVal)),
+                color: Colors.white,
+              ),
+              children: {
+                1: const Text("Seneste donationer"),
+                2: const Text("Flest donationer"),
+                3: const Text("Bedste hold")
+              },
+              onValueChanged: (int newVal) => print(newVal)),
+        ),
         Column(
           mainAxisSize: MainAxisSize.min,
-          children: List.generate(4, (index) => _buildSupportBanner(context)),
+          children: List.generate(15, (index) => _buildSupportBanner(context)),
         ),
       ],
     );

@@ -41,7 +41,11 @@ class Header extends StatelessWidget {
               const SizedBox(
                 height: 60,
               ),
-              const SizedBox(width: 400, height: 80, child: Placeholder()),
+              CircleAvatar(
+                radius: 120,
+                  backgroundColor: Colors.white,
+                  child: Padding(padding: EdgeInsets.all(20),
+              child: Image.asset("assets/fb-logo.png", ))),
               const SizedBox(
                 height: 50,
               ),

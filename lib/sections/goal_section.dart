@@ -39,20 +39,20 @@ class GoalSection extends StatelessWidget {
           inwardness: MediaQuery.of(context).size.width * 0.1),
       child: Container(
         color: Colors.blue[900],
-        constraints: const BoxConstraints(minHeight: 1000),
+        constraints: const BoxConstraints(minHeight: 3000),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Center(
               child: SizedBox(
-                height: MediaQuery.of(context).size.width * 0.1,
+                height: MediaQuery.of(context).size.width * 0.08,
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                "Projektet".toUpperCase(),
+                "Projektet og målet".toUpperCase(),
                 style: Theme.of(context).textTheme.displayMedium!.copyWith(
                     fontWeight: FontWeight.w900,
                     fontSize: 55,

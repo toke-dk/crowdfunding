@@ -101,11 +101,6 @@ class _MyHomePageState extends State<MyHomePage> {
               children: const [
                 Column(
                   children: [
-                    GoalSection(),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    SocialsSection(),
                     Header(),
                     SizedBox(
                       height: 50,
