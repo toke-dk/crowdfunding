@@ -1,6 +1,7 @@
 import 'package:crowdfunding/sections/goal_section.dart';
 import 'package:crowdfunding/sections/header.dart';
 import 'package:crowdfunding/sections/leaderboard_section.dart';
+import 'package:crowdfunding/sections/socials_section.dart';
 import 'package:crowdfunding/sections/support_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -100,7 +101,11 @@ class _MyHomePageState extends State<MyHomePage> {
               children: const [
                 Column(
                   children: [
-
+                    GoalSection(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    SocialsSection(),
                     Header(),
                     SizedBox(
                       height: 50,
@@ -113,7 +118,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       height: 60,
                     ),
-                    GoalSection()
+                    GoalSection(),
+                    SocialsSection(),
+
                   ],
                 ),
               ]),
