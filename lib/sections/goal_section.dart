@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
@@ -37,27 +38,28 @@ class GoalSection extends StatelessWidget {
       clipper: TopInwardBendClipper(
           inwardness: MediaQuery.of(context).size.width * 0.1),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.6,
         color: Colors.blue[900],
         constraints: const BoxConstraints(minHeight: 1000),
-        child: Center(
-          child: Column(
-            children: [
-              SizedBox(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Center(
+              child: SizedBox(
                 height: MediaQuery.of(context).size.width * 0.1,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Text(
-                  "Projektet".toUpperCase(),
-                  style: Theme.of(context)
-                      .textTheme
-                      .displayMedium!
-                      .copyWith(fontWeight: FontWeight.w900, fontSize: 55, color: Colors.white),
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                "Projektet".toUpperCase(),
+                style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 55,
+                    color: Colors.white),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
