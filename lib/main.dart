@@ -1,6 +1,7 @@
-import 'package:crowdfunding/header.dart';
-import 'package:crowdfunding/leaderboard_section.dart';
-import 'package:crowdfunding/support_section.dart';
+import 'package:crowdfunding/sections/goal_section.dart';
+import 'package:crowdfunding/sections/header.dart';
+import 'package:crowdfunding/sections/leaderboard_section.dart';
+import 'package:crowdfunding/sections/support_section.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -99,6 +100,10 @@ class _MyHomePageState extends State<MyHomePage> {
               children: const [
                 Column(
                   children: [
+                    GoalSection(),
+                    SizedBox(
+                      height: 30,
+                    ),
                     Header(),
                     SizedBox(
                       height: 50,
@@ -108,6 +113,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 100,
                     ),
                     LeaderboardSection(),
+                    SizedBox(
+                      height: 60,
+                    ),
+                    GoalSection()
                   ],
                 ),
               ]),
