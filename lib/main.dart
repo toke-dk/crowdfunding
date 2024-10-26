@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Sportsindsamling',
       theme: ThemeData(
         textTheme: GoogleFonts.montserratTextTheme().copyWith(
           displayMedium: GoogleFonts.montserrat(
